@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Badminton Tournament Registration</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* General Body Styling */
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        /* 3D Effect Container */
+        .container {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            width: 100%;
+            max-width: 600px;
+            transform: perspective(1000px) rotateY(5deg);
+            transition: all 0.3s ease;
+        }
+
+        .container:hover {
+            transform: perspective(1000px) rotateY(0deg);
+        }
+
+        /* Registration Button */
+        .register-btn {
+            display: inline-block;
+            background-color: #FF5722;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        /* Page Heading */
+        h1 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Description Text */
+        p {
+            font-size: 1.1rem;
+            color: #555;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* Form Row Styling */
+        .form-row {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        input[type="text"], input[type="email"], input[type="tel"], select {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        /* Submit Button */
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #388E3C;
+        }
+
+        /* Hide the team player name field initially */
+        .team-player-row {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Wrapper -->
+    <div class="container">
+        <!-- Registration Button -->
+        <a href="badmintonregistration.html" class="register-btn">🏸 Register for Badminton</a>
+
+        <!-- Page Heading -->
+        <h1>🏸 Badminton Tournament Registration</h1>
+        <p>Fill out the form below to participate in the exciting Badminton tournament.</p>
+
+        <!-- Registration Form -->
+        <form action="success.html" method="GET">
+
+            <!-- Full Name -->
+            <div class="form-row">
+                <label for="name">🏷️ Full Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <!-- Email Address -->
+            <div class="form-row">
+                <label for="email">📧 Email Address:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <!-- Phone Number -->
+            <div class="form-row">
+                <label for="phone">📞 Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <!-- College Name -->
+            <div class="form-row">
+                <label for="college">🏫 College Name:</label>
+                <input type="text" id="college" name="college" required>
+            </div>
+
+            <!-- Age Group -->
+            <div class="form-row">
+                <label for="age-group">🎯 Age Group:</label>
+                <select id="age-group" name="age-group" required>
+                    <option value="under-18">Under 18</option>
+                    <option value="18-25">18-25</option>
+                    <option value="26-35">26-35</option>
+                    <option value="36-45">36-45</option>
+                    <option value="46+">46+</option>
+                </select>
+            </div>
+
+            <!-- Preferred Role -->
+            <div class="form-row">
+                <label for="role">🎭 Preferred Role:</label>
+                <select id="role" name="role" required>
+                    <option value="singles">Singles</option>
+                    <option value="doubles">Doubles</option>
+                </select>
+            </div>
+
+            <!-- Captain Selection -->
+            <div class="form-row">
+                <label for="captain">🧢 Captain:</label>
+                <input type="radio" id="captain-yes" name="captain" value="yes"> Yes
+                <input type="radio" id="captain-no" name="captain" value="no"> No
+            </div>
+
+            <!-- T-shirt Size -->
+            <div class="form-row">
+                <label for="tshirt">👕 T-shirt Size:</label>
+                <select id="tshirt" name="tshirt" required>
+                    <option value="S">Small</option>
+                    <option value="M">Medium</option>
+                    <option value="L">Large</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                </select>
+            </div>
+
+            <!-- Team Name -->
+            <div class="form-row">
+                <label for="team">🏸 Team Name:</label>
+                <input type="text" id="team" name="team">
+            </div>
+
+            <!-- Team Player Names (Only visible if 'Doubles' is selected) -->
+            <div class="form-row team-player-row">
+                <label for="team-player">🏸 Team Player Names:</label>
+                <input type="text" id="team-player" name="team-player" placeholder="Enter teammate's name">
+            </div>
+
+            <!-- Emergency Contact -->
+            <div class="form-row">
+                <label for="emergency-contact">🚑 Emergency Contact:</label>
+                <input type="text" id="emergency-contact" name="emergency-contact">
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit">✅ Submit Registration</button>
+
+        </form>
+    </div>
+
+    <script>
+        // JavaScript to show/hide Team Player Name field based on the Preferred Role
+        const roleSelect = document.getElementById('role');
+        const teamPlayerRow = document.querySelector('.team-player-row');
+
+        // Function to toggle the visibility of the Team Player field
+        function toggleTeamPlayerField() {
+            if (roleSelect.value === 'doubles') {
+                teamPlayerRow.style.display = 'block'; // Show the Team Player field
+            } else {
+                teamPlayerRow.style.display = 'none'; // Hide the Team Player field
+            }
+        }
+
+        // Event listener to trigger the toggle function when the role is changed
+        roleSelect.addEventListener('change', toggleTeamPlayerField);
+
+        // Initialize the form based on the current selected value (e.g., on page load)
+        toggleTeamPlayerField();
+    </script>
+
+</body>
+</html>

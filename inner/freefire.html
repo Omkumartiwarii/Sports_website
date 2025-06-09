@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Fire Page</title>
+    <style>
+        /* General Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #111;
+            color: #fff;
+        }
+
+        /* Header Section */
+        header {
+            padding: 20px 0;
+            background-color: #1d1d1d;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .header-logo {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            margin-left:30px;
+            object-fit: cover;
+        }
+
+        .header-buttons button {
+            padding: 10px 60px;
+            background-color: #f79c42;
+            border: none;
+            margin-right:30px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .header-buttons button a {
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .header-buttons button:hover {
+            background-color: #ffac33;
+        }
+
+        /* Photo Gallery Section */
+        #gallery-section {
+            padding: 40px;
+            background-color: #1d1d1d;
+            text-align: center;
+        }
+
+        #gallery-section h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #f79c42;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .gallery img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            margin: 10px;
+            border-radius: 12px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.5),
+                        -5px -5px 15px rgba(255, 255, 255, 0.05);
+            border: 2px solid #f79c42;
+            cursor: pointer;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05) rotateY(10deg) rotateX(10deg);
+        }
+
+        /* Modal Styling */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            padding-top: 50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 80vh;
+            border: 4px solid #f79c42;
+            box-shadow: 0 0 20px rgba(247, 156, 66, 0.8);
+            border-radius: 10px;
+            animation: zoom 0.3s ease;
+        }
+
+        @keyframes zoom {
+            from { transform: scale(0.5); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .close {
+            position: absolute;
+            top: 30px;
+            right: 50px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #f79c42;
+        }
+
+        /* Footer Section */
+        #footer-section {
+            background-color: #1d1d1d;
+            padding: 40px 20px;
+            color: #fff;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: center;
+            padding: 0 20px;
+            margin-bottom: 20px;
+        }
+
+        .footer-container div {
+            flex: 1;
+            text-align: center;
+        }
+
+        .footer-container h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #f79c42;
+        }
+
+        .footer-container p {
+            font-size: 14px;
+        }
+
+        .footer-disclaimer {
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+        }
+
+        .footer-disclaimer p {
+            margin: 5px 0;
+        }
+
+        .bonus-cash {
+            text-align: center;
+            background-color: #f79c42;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .bonus-cash p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+            <img src="../image/p2.jpeg" alt="Free Fire Logo" class="header-logo">
+            <div class="header-buttons">
+                <button class="login-register"><a href="../registration/freefireregistration.html">Register</a></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Photo Gallery Section -->
+    <section id="gallery-section">
+        <h1>Free fire Gallery</h1>
+        <div class="gallery">
+            <img src="../image/freefire_image/ffimage.jpg" alt="Photo 0">
+            <img src="../image/freefire_image/ff14.jpg" alt="Photo 1">
+            <img src="../image/freefire_image/ff18.jpg" alt="Photo 2">
+            <img src="../image/freefire_image/ff19.jpg" alt="Photo 3">
+            <img src="../image/freefire_image/ff17.jpg" alt="Photo 4">
+            <img src="../image/freefire_image/ff15.jpg" alt="Photo 5">
+            <img src="../image/freefire_image/ff20.jpg" alt="Photo 6">
+            <img src="../image/freefire_image/ff16.jpg" alt="Photo 7">
+            <img src="../image/freefire_image/ff13.jpg" alt="Photo 8">
+            <img src="../image/freefire_image/ff3.jpg" alt="Photo 9">
+            <img src="../image/freefire_image/ff1.jpg" alt="Photo 10">
+            <img src="../image/freefire_image/ff4.jpg" alt="Photo 11">
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <section id="footer-section">
+        <footer>
+            <div class="footer-container">
+                <div>
+                    <h3>Connect <span>With Us</span></h3>
+                    <p>📞 (+91) 1234567890</p>
+                    <p>✉️ gecsheohar.ac.in</p>
+                    <p>📍 Government Engineering College Sheohar </p>
+                </div>
+            </div>
+            <div class="footer-disclaimer">
+                <p>Disclaimer: Free Fire continues to captivate players worldwide due to its engaging gameplay, regular updates, and inclusive nature. Whether you're a casual player or an esports enthusiast, Free Fire has something to offer for everyone.</p>
+            </div>
+            <div class="bonus-cash">
+                <p> All match will be played in Gec Sheohar Campus. </p>
+            </div>
+        </footer>
+    </section>
+
+    <!-- Image Modal Viewer -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <!-- JavaScript for Modal -->
+    <script>
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImage");
+
+        document.querySelectorAll(".gallery img").forEach(img => {
+            img.addEventListener("click", () => {
+                modal.style.display = "block";
+                modalImg.src = img.src;
+                modalImg.alt = img.alt;
+            });
+        });
+
+        function closeModal() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+
+</body>
+</html>
