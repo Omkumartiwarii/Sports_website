@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Fire Registration</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff; /* Changed background color to white */
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: #f4f4f4;
+            border-radius: 10px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #f79c42;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        input[type="text"], input[type="email"], input[type="tel"], select, input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #e0e0e0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .slot-options, .squad-players {
+            display: none;
+        }
+        .form-group button {
+            width: 100%;
+            padding: 12px;
+            background-color: #f79c42;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            color: #fff;
+            transition: background-color 0.3s;
+        }
+        .form-group button:hover {
+            background-color: #ffac33;
+        }
+        .form-footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Free Fire Registration</h2>
+        <form id="registration-form">
+            <!-- Name Section -->
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <!-- Phone Number Section -->
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <!-- Email Section -->
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <!-- Batch/Branch Section -->
+            <div class="form-group">
+                <label for="batch">Batch/Branch:</label>
+                <input type="text" id="batch" name="batch" required>
+            </div>
+
+            <!-- Solo or Squad Section -->
+            <div class="form-group">
+                <label for="soloOrSquad">Solo or Squad:</label>
+                <select id="soloOrSquad" name="soloOrSquad" required onchange="toggleSlotOption()">
+                    <option value="solo">Solo</option>
+                    <option value="squad">Squad</option>
+                </select>
+            </div>
+
+            <!-- In-Game UID Section (Only visible for Solo) -->
+            <div class="form-group" id="uidSection">
+                <label for="uid">In-Game UID:</label>
+                <input type="text" id="uid" name="uid" required>
+            </div>
+
+            <!-- Slot Section for Squad -->
+            <div class="form-group slot-options" id="slotOptions">
+                <label for="slots">Choose Your Slot:</label>
+                <input type="number" id="slots" name="slots" min="1" required placeholder="Enter slot number">
+            </div>
+
+            <!-- Squad Player Details -->
+            <div class="squad-players" id="squadPlayers">
+                <h3>Squad Player Details</h3>
+                <!-- Player 1 -->
+                <div class="form-group">
+                    <label for="player1_name">Player 1 Name:</label>
+                    <input type="text" id="player1_name" name="player1_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="player1_uid">Player 1 UID:</label>
+                    <input type="text" id="player1_uid" name="player1_uid" required>
+                </div>
+                <!-- Player 2 -->
+                <div class="form-group">
+                    <label for="player2_name">Player 2 Name:</label>
+                    <input type="text" id="player2_name" name="player2_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="player2_uid">Player 2 UID:</label>
+                    <input type="text" id="player2_uid" name="player2_uid" required>
+                </div>
+                <!-- Player 3 -->
+                <div class="form-group">
+                    <label for="player3_name">Player 3 Name:</label>
+                    <input type="text" id="player3_name" name="player3_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="player3_uid">Player 3 UID:</label>
+                    <input type="text" id="player3_uid" name="player3_uid" required>
+                </div>
+                <!-- Player 4 -->
+                <div class="form-group">
+                    <label for="player4_name">Player 4 Name:</label>
+                    <input type="text" id="player4_name" name="player4_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="player4_uid">Player 4 UID:</label>
+                    <input type="text" id="player4_uid" name="player4_uid" required>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group">
+                <button type="submit">Register</button>
+            </div>
+        </form>
+        
+        <div class="form-footer">
+            <p>Strategic gameplay in Free Fire helps develop patience, focus, and adaptability in daily life.</p>
+        </div>
+    </div>
+
+    <script>
+        // Function to toggle the slot option visibility based on solo/squad selection
+        function toggleSlotOption() {
+            const soloOrSquad = document.getElementById('soloOrSquad').value;
+            const slotOptions = document.getElementById('slotOptions');
+            const squadPlayers = document.getElementById('squadPlayers');
+            const uidSection = document.getElementById('uidSection');  // In-Game UID field
+
+            // Show squad player details and slot input if Squad is selected, otherwise hide
+            if (soloOrSquad === 'squad') {
+                slotOptions.style.display = 'block';
+                squadPlayers.style.display = 'block';
+                // Hide In-game UID input for squad
+                uidSection.style.display = 'none';
+            } else {
+                slotOptions.style.display = 'none';
+                squadPlayers.style.display = 'none';
+                // Show In-game UID input for solo
+                uidSection.style.display = 'block';
+            }
+        }
+    </script>
+
+</body>
+</html>

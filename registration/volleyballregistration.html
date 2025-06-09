@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volleyball Tournament Registration</title>
+    <style>
+        /* General Styling */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: #121212;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Centering and 3D effect */
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            perspective: 1000px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+            transform-style: preserve-3d;
+            transform: rotateX(0deg);
+            transition: transform 0.5s;
+        }
+
+        .container:hover {
+            transform: rotateX(10deg);
+        }
+
+        /* Styling the form and buttons */
+        h1 {
+            text-align: center;
+            font-size: 2rem;
+            color: #4CAF50;
+        }
+
+        .form-row {
+            margin-bottom: 15px;
+        }
+
+        .form-row label {
+            font-size: 1rem;
+            color: #333;
+            display: block;
+        }
+
+        .form-row input, .form-row select {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            margin-top: 5px;
+        }
+
+        .form-row input[type="radio"] {
+            width: auto;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            font-size: 1.1rem;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #388e3c;
+        }
+
+        /* Styling the register button at the top */
+        .register-btn {
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            font-size: 1.2rem;
+            background-color: #FF5722;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .register-btn:hover {
+            background-color: #e64a19;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="container">
+            <a href="INNER/volleyball.html" class="register-btn">🏐 Register for Volleyball</a>
+
+            <h1>🏐 Volleyball Tournament Registration</h1>
+            <p>Fill out the form below to participate in the tournament.</p>
+
+            <form action="success.html" method="GET">
+                <div class="form-row">
+                    <label for="name">🏷️ Full Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="email">📧 Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="phone">📞 Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="college">🏫 College Name:</label>
+                    <input type="text" id="college" name="college" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="age-group">🎯 Age Group:</label>
+                    <select id="age-group" name="age-group" required>
+                        <option value="under-18">Under 18</option>
+                        <option value="18-25">18-25</option>
+                        <option value="26-35">26-35</option>
+                        <option value="36-45">36-45</option>
+                        <option value="46+">46+</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <label for="role">🎭 Preferred Role:</label>
+                    <select id="role" name="role" required>
+                        <option value="spiker">Spiker</option>
+                        <option value="setter">Setter</option>
+                        <option value="libero">Libero</option>
+                        <option value="blocker">Blocker</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <label for="captain">🧢 Captain:</label>
+                    <input type="radio" id="captain-yes" name="captain" value="yes"> Yes
+                    <input type="radio" id="captain-no" name="captain" value="no"> No
+                </div>
+
+                <div class="form-row">
+                    <label for="team">🏐 Team Name:</label>
+                    <input type="text" id="team" name="team" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="team-players">👥 Team Player Names:</label>
+                    <input type="text" id="team-players" name="team-players" placeholder="Enter players' names separated by commas" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="emergency-contact">🚑 Emergency Contact:</label>
+                    <input type="text" id="emergency-contact" name="emergency-contact" required>
+                </div>
+
+                <button type="submit">✅ Submit Registration</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
