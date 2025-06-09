@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javelin Event</title>
+    <link rel="stylesheet" href="javelin-style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="../image/p2.jpeg" alt="Event Logo">
+            </div>
+            <ul>
+                <li><a href="#overview">Event Overview</a></li>
+                <li><a href="#rules">Rules</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#registration">Registration</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact-section">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Main content here -->
+        <section id="overview" class="section">
+            <div class="container">
+                <h1 class="section-title">Javelin Event</h1>
+                <p class="section-description">Experience the thrill of the Javelin Throw! A true test of strength, skill, and precision. Ready to showcase your talent? Register now!</p>
+            </div>
+        </section>
+
+        <section id="rules" class="section dark-bg">
+            <div class="container">
+                <h2 class="section-title">Event Rules</h2>
+                <ul class="rule-list">
+                    <li>The thrower must stay behind the designated line while throwing the javelin.</li>
+                    <li>Each athlete gets a maximum of 3 throws.</li>
+                    <li>The longest throw wins.</li>
+                    <li>Respect the designated safety zones and rules for the event.</li>
+                    <li>No interference with other competitors.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="schedule" class="section">
+            <div class="container">
+                <h2 class="section-title">Event Schedule</h2>
+                <p>The event will follow this schedule:</p>
+                <ul class="schedule-list">
+                    <li>Registration: 10:00 AM - 10:30 AM</li>
+                    <li>Opening Ceremony: 10:30 AM - 11:00 AM</li>
+                    <li>Javelin Throw: 11:00 AM - 1:00 PM</li>
+                    <li>Award Ceremony: 1:00 PM - 1:30 PM</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="registration" class="section dark-bg">
+            <div class="container">
+                <h2 class="section-title">Registration</h2>
+                <p class="section-description">Fill out the form below to register for the Javelin event:</p>
+                <form action="submit_registration.php" method="POST" class="registration-form">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" required><br><br>
+
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" name="age" required><br><br>
+
+                    <label for="contact">Contact Number:</label>
+                    <input type="tel" id="contact" name="contact" required><br><br>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required><br><br>
+
+                    <button type="submit" class="submit-btn">Register Now</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Gallery Section with Video -->
+        <section id="gallery" class="section">
+    <div class="container">
+        <h2 class="section-title">Javelin Event Gallery</h2>
+        <div class="gallery">
+            <!-- Add your images here -->
+            <img src="../image/javellin.png" alt="Javelin Throw 1">
+            <img src="../image/javellin.png" alt="Javelin Throw 2">
+            <img src="../image/javellin.png" alt="Javelin Throw 3">
+            <img src="../image/javellin.png" alt="Javelin Throw 4">
+            <img src="../image/javellin.png" alt="Javelin Throw 5">
+            <img src="../image/javellin.png" alt="Javelin Throw 6">
+            <img src="../image/javellin.png" alt="Javelin Throw 7">
+            <img src="../image/javellin.png" alt="Javelin Throw 8">
+            <img src="../image/javellin.png" alt="Javelin Throw 9">
+            <img src="../image/javellin.png" alt="Javelin Throw 10">
+            <img src="../image/javellin.png" alt="Javelin Throw 11">
+            <img src="../image/javellin.png" alt="Javelin Throw 12">
+            <img src="../image/javellin.png" alt="Javelin Throw 13">
+            <img src="../image/javellin.png" alt="Javelin Throw 14">
+        </div>
+
+        <!-- Video Section -->
+        <div class="video-container">
+            <h3>Watch the Javelin Throw in Action!</h3>
+            <div class="video-wrapper">
+                <video controls width="80%">
+                    <source src="../videos/javelin-throw.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Contact Section -->
+        <section id="contact-section" class="section dark-bg">
+            <div class="container">
+                <h2 class="section-title">Contact Us</h2>
+                <p>If you have any questions, feel free to get in touch:</p>
+                <p>Email: <a href="mailto:info@javelinevent.com" class="contact-link">info@javelinevent.com</a></p>
+                <p>Phone: <a href="tel:+1234567890" class="contact-link">+1 (234) 567-890</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Javelin Event. All rights reserved.</p>
+    </footer>
+</body>
+</html>

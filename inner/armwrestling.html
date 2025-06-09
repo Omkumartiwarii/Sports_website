@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arm Wrestling Championship</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: #0a0a0a;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background: linear-gradient(45deg, #F44336, #FF5722);
+            z-index: 2;
+            position: relative;
+        }
+
+        .navbar-brand img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            text-align: center;
+            padding: 100px 0;
+            z-index: 1;
+        }
+
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Power Bar */
+        .power-bar {
+            width: 80%;
+            height: 50px;
+            background: #555;
+            border-radius: 25px;
+            margin-top: 30px;
+            position: relative;
+            margin: 0 auto;
+            z-index: 1;
+        }
+
+        .power-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #FF9800, #FF5722);
+            border-radius: 25px;
+            width: 0%;
+        }
+
+        /* Registration Section */
+        .registration-section {
+            background-color: #333;
+            padding: 50px 0;
+            text-align: center;
+            z-index: 2;
+            position: relative;
+        }
+
+        .registration-section h2 {
+            font-size: 2.5rem;
+            color: #f4f4f4;
+            font-weight: bold;
+        }
+
+        .registration-section p {
+            font-size: 1.2rem;
+            color: #bbb;
+        }
+
+        .register-btn {
+            background-color: #4caf50;
+            padding: 12px 20px;
+            font-size: 18px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+
+        .register-btn:hover {
+            background-color: #388e3c;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        /* Particles and Effects Container */
+        #particles-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0; /* Lower z-index so particles stay behind everything else */
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Particles Container -->
+    <div id="particles-container"></div>
+
+    <!-- Navbar with Logo -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="../image/p2.jpeg" alt="Logo"> <!-- Replace with your logo -->
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <h1>Arm Wrestling Championship</h1>
+        <div class="power-bar">
+            <div class="power-bar-fill" id="power-bar-fill"></div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section class="registration-section">
+        <h2>Register for the Arm Wrestling Tournament</h2>
+        <p>Compete against the best arm wrestlers and test your strength!</p>
+        <a href="../registration/armwrestlingregistration.html" class="register-btn">Register Now</a>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>📍 All matches will be held at the GEC Sheohar Arena.</p>
+    </footer>
+
+    <script>
+        // Create Particles and Connect Them
+        class Particle {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                this.size = Math.random() * 5 + 2;
+                this.speedX = Math.random() * 2 - 1;
+                this.speedY = Math.random() * 2 - 1;
+                this.color = 'rgba(255, 165, 0, 0.8)';
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                // Bounce off edges
+                if (this.x > window.innerWidth || this.x < 0) this.speedX *= -1;
+                if (this.y > window.innerHeight || this.y < 0) this.speedY *= -1;
+            }
+
+            draw(context) {
+                context.beginPath();
+                context.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                context.fillStyle = this.color;
+                context.fill();
+            }
+        }
+
+        const particles = [];
+        const canvas = document.createElement('canvas');
+        document.getElementById('particles-container').appendChild(canvas);
+        const ctx = canvas.getContext('2d');
+
+        // Resize canvas to full screen
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        // Handle mousemove to create particles
+        window.addEventListener('mousemove', (e) => {
+            for (let i = 0; i < 5; i++) {
+                particles.push(new Particle(e.x, e.y));
+            }
+        });
+
+        // Draw particles and connect them dynamically
+        function connectParticles() {
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    if (distance < 100) {
+                        ctx.strokeStyle = 'rgba(255, 165, 0, 0.2)';
+                        ctx.lineWidth = 0.5;
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        // Update particles and draw them
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw(ctx);
+            }
+
+            connectParticles();
+            requestAnimationFrame(animate);
+        }
+
+        // Start particle animation
+        animate();
+
+        // Control the power bar based on cursor distance
+        window.addEventListener('mousemove', function(e) {
+            const powerBarFill = document.getElementById('power-bar-fill');
+            const maxDistance = window.innerWidth / 2;
+            const distance = Math.sqrt(Math.pow(e.clientX - window.innerWidth / 2, 2) + Math.pow(e.clientY - window.innerHeight / 2, 2));
+            const percentage = Math.min((distance / maxDistance) * 100, 100);
+            powerBarFill.style.width = `${percentage}%`;
+        });
+    </script>
+
+</body>
+</html>
