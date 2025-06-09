@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .welcome-container {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      padding: 50px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      font-size: 2.5em;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+    }
+
+    .logout-button {
+      background-color: #ff4d4d;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 1em;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .logout-button:hover {
+      background-color: #e04343;
+    }
+  </style>
+</head>
+<body>
+  <div class="welcome-container">
+    <h1>Welcome!</h1>
+    <p id="welcome-message">You have successfully logged in.</p>
+    <button class="logout-button" onclick="logout()">Continue</button>
+  </div>
+
+  <script>
+    const user = sessionStorage.getItem('loggedInUser');
+    const message = document.getElementById('welcome-message');
+
+    if (user) {
+      message.textContent = `Hello, ${user}! You have successfully logged in.`;
+    } else {
+      message.textContent = 'Session expired. Redirecting...';
+      setTimeout(() => {
+        window.location.href = 'login.html';
+      }, 2000);
+    }
+
+    function logout() {
+      sessionStorage.clear();
+      window.location.href = 'index1.html';
+    }
+  </script>
+</body>
+</html>

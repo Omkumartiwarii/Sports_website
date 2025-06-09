@@ -1,0 +1,314 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('image/loginpage_background1.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .login-container {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            color: white;
+            text-align: center;
+            width: 100%;
+            max-width: 350px;
+        }
+        .login-container h2 {
+            margin-bottom: 20px;
+        }
+        .input-field {
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .input-field input {
+            width: 100%;
+            padding: 10px 40px 10px 10px;
+            border: none;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            outline: none;
+        }
+        .input-field i {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+        }
+        .options {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            font-size: 0.9em;
+        }
+        .options label {
+            display: flex;
+            align-items: center;
+        }
+        .login-button, .google-login-button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .login-button {
+            background-color: white;
+            color: #0d1b2a;
+        }
+        .google-login-button {
+            background-color: #42403b;
+            color: white;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .google-login-button img {
+            width: 20px;
+            height: 20px;
+        }
+        .register {
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+        .register a {
+            color: white;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <div class="input-field">
+            <input type="text" id="username" placeholder="Username" />
+            <i class="fas fa-user"></i>
+        </div>
+        <div class="input-field">
+            <input type="password" id="password" placeholder="Password" />
+            <i class="fas fa-lock"></i>
+        </div>
+        <div class="options">
+            <label><input type="checkbox" /> Remember me</label>
+            <a href="#" style="color:white;">Forgot password?</a>
+        </div>
+        <button class="login-button" onclick="loginUser()">Login</button>
+        <button class="google-login-button" onclick="loginWithGoogle()">
+            <img src="image/Google_logo1.png" alt="Google Logo" />
+            Login with Google
+        </button>
+        <div class="register">
+            Don’t have an account? <a href="signup.html">Register</a>
+        </div>
+    </div>
+
+    <script>
+        function loginUser() {
+            const username = document.getElementById('username');
+            const password = document.getElementById('password');
+
+            if (username.value && password.value) {
+                // Save username in sessionStorage for persistence
+                sessionStorage.setItem('loggedInUser', username.value);
+
+                // Clear input fields
+                username.value = '';
+                password.value = '';
+
+                // Redirect to welcome page
+                window.location.href = 'welcome.html';
+            } else {
+                alert('Please enter username and password.');
+            }
+        }
+
+        function loginWithGoogle() {
+            alert('Redirecting to Google login...');
+            // Add actual Google OAuth flow here if needed
+        }
+    </script>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('image/loginpage_background1.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .login-container {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            color: white;
+            text-align: center;
+            width: 100%;
+            max-width: 350px;
+        }
+        .login-container h2 {
+            margin-bottom: 20px;
+        }
+        .input-field {
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .input-field input {
+            width: 100%;
+            padding: 10px 40px 10px 10px;
+            border: none;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            outline: none;
+        }
+        .input-field i {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+        }
+        .options {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            font-size: 0.9em;
+        }
+        .options label {
+            display: flex;
+            align-items: center;
+        }
+        .login-button, .google-login-button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .login-button {
+            background-color: white;
+            color: #0d1b2a;
+        }
+        .google-login-button {
+            background-color: #42403b;
+            color: white;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .google-login-button img {
+            width: 20px;
+            height: 20px;
+        }
+        .register {
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+        .register a {
+            color: white;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <div class="input-field">
+            <input type="text" id="username" placeholder="Username" />
+            <i class="fas fa-user"></i>
+        </div>
+        <div class="input-field">
+            <input type="password" id="password" placeholder="Password" />
+            <i class="fas fa-lock"></i>
+        </div>
+        <div class="options">
+            <label><input type="checkbox" /> Remember me</label>
+            <a href="#" style="color:white;">Forgot password?</a>
+        </div>
+        <button class="login-button" onclick="loginUser()">Login</button>
+        <button class="google-login-button" onclick="loginWithGoogle()">
+            <img src="icon/Google_logo1.png" alt="Google Logo" />
+            Login with Google
+        </button>
+        <div class="register">
+            Don’t have an account? <a href="signup.html">Register</a>
+        </div>
+    </div>
+
+    <script>
+        function loginUser() {
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+
+            if (username && password) {
+                // Save username in sessionStorage for welcome page
+                sessionStorage.setItem('loggedInUser', username);
+
+                // Clear input fields
+                document.getElementById('username').value = '';
+                document.getElementById('password').value = '';
+
+                // Redirect to welcome page
+                window.location.href = 'welcome.html';
+            } else {
+                alert('Please enter username and password.');
+            }
+        }
+
+        function loginWithGoogle() {
+            alert('Redirecting to Google login...');
+            // Actual Google OAuth code can be implemented here
+        }
+    </script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
